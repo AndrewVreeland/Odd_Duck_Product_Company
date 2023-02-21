@@ -12,8 +12,8 @@ main {
   width: 1024px;
   margin: 3rem auto;
   display: grid;
-  grid-template-columns: 250px 4fr;
-  grid-template-rows: 6.5rem 10rem 8rem 40%;
+  grid-template-columns: 250px 4fr 10% 10%;
+  grid-template-rows: 6.5rem 10rem 8rem 5% 5% 5% 5% 5% 5%;
 }
 
 /* #siteLogo {
@@ -25,7 +25,7 @@ main {
   grid-column-end: 3
 } */
 
-/* h1 {
+h1 {
   font-size: 5rem;
   color: rosybrown;
   line-height: .8;
@@ -34,26 +34,32 @@ main {
   grid-row-end: 3;
   grid-column-start: 2;
   grid-column-end: 3;
-} */
+}
+
+
+
 
 section {
   /* This element will be a grid item, but also a flex container */
   background-color: rgba(211, 187, 176, 0.3);
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 7 ;
   grid-column-start: 1;
   grid-column-end: 3;
   padding: 2rem;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   /* align-items: flex-start;  */
 }
-button{
-  grid-row-start:3;
-  grid-row-end: 3;
-  
+
+button {
+  grid-row-start: 8;
+  grid-row-end: 8;
+  grid-column-start:1 ;
+
 }
-/* -- goat images --*/
+
+
 section img {
   width: 260px;
   max-height: 26rem;
@@ -62,12 +68,14 @@ section img {
   added in :hover styles --*/
   border: 5px solid transparent;
 }
+
 /*-- add hover states so the user can tell what 
 behavior is expected of them--*/
 section img:hover {
   border: 5px solid rgb(253, 0, 0);
   cursor: pointer;
 }
+
 /* once voting ends */
 section.no-voting img:hover {
   border: 5px solid transparent;
@@ -78,17 +86,18 @@ section.no-voting img:hover {
 ul {
   margin: 1rem;
   color: white;
-  grid-row-start:4;
-  grid-row-end:;
-  grid-column: auto;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  grid-column: 1;
 }
+
 li {
   margin: .5rem;
   color: white;
 }
 
 /* -- button -- */
-section + div {
+section+div {
   background-color: rgb(66, 196, 120);
   color: rgb(255, 255, 255);
   padding: .5rem 1rem;
@@ -96,22 +105,628 @@ section + div {
   height: max-content;
   font-size: .8rem;
   margin: 1rem;
-
+  
   /* —— Demo stretch goal —— */
   /* This code improves the UX. Making it clear what the user should 
   do once the voting cycle ends. Do not demo this unless you do the 
   below 'section + div.clicks-allowed' code as well. The class  
   'clicks-allowed' must be added to the element via the JavaScript. */
-
+  
   pointer-events: none;
 }
+
 /* Demo stretch goal: */
-section + div.clicks-allowed {
+section+div.clicks-allowed {
   background-color: rgb(255, 0, 0);
   color: white;
   cursor: pointer;
   pointer-events: auto;
 }
-section + div.clicks-allowed:hover {
+
+section+div.clicks-allowed:hover {
   background-color: rgb(255, 0, 0)
+}
+.rainbow-text {
+
+  width: 1000px;
+  height: 100px;
+  animation-name: rainbow-text;
+  animation-duration:7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-text {
+  0% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  1% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  2% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  3% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  4% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  5% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  6% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  7% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  8% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  9% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  10% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  11% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  12% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  13% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  14% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  15% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  16% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  17% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  18% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  19% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  20% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  21% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  22% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  23% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  24% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  25% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  26% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  27% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  28% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  29% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  30% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  31% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  32% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  33% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  34% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  35% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  36% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  37% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  38% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  39% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  40% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  41% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  42% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  43% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  44% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  45% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  46% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  47% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  48% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  49% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  50% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  51% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  52% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  53% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  54% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  55% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  56% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  57% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  58% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  59% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  60% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  61% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  62% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  63% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  64% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  65% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  66% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  67% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  68% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  69% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  70% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  71% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  72% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  73% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  74% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  75% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  76% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  77% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  78% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  79% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  80% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  81% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  82% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  83% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  84% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  85% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  86% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  87% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  88% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  89% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  90% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  91% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  92% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  93% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  94% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  95% {
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  96% {
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  98% {
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  100% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }
