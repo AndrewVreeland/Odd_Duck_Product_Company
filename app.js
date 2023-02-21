@@ -66,7 +66,7 @@ function handleResultsViewing(){
   console.log('hello');
   for (let i = 0; i < productArray.length; i++){
     let productListItem = document.createElement('li');
-    productListItem.textContent = `${productArray[i].views} Views, & votes: ${productArray[i].votes}`;
+    productListItem.textContent = `The ${productArray[i].name} has ${productArray[i].views} Views, & votes: ${productArray[i].votes}`;
     list.appendChild(productListItem);
   }
   resultsBtn1.removeEventListener('click', handleResultsViewing);
