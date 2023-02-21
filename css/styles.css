@@ -12,18 +12,9 @@ main {
   width: 1024px;
   margin: 3rem auto;
   display: grid;
-  grid-template-columns: 250px 4fr 10% 10%;
-  grid-template-rows: 6.5rem 10rem 8rem 5% 5% 5% 5% 5% 5%;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
-
-/* #siteLogo {
-  width: 250px;
-  z-index: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: 3
-} */
 
 h1 {
   font-size: 5rem;
@@ -31,9 +22,9 @@ h1 {
   line-height: .8;
   margin: 3rem 0 1rem;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 1;
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 4;
 }
 
 
@@ -42,10 +33,10 @@ h1 {
 section {
   /* This element will be a grid item, but also a flex container */
   background-color: rgba(247, 223, 223, 0.226);
-  grid-row-start: 3;
-  grid-row-end: 8 ;
+  grid-row-start: 4;
+  grid-row-end: 10 ;
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 10;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -53,8 +44,8 @@ section {
 }
 
 button {
-  grid-row-start: 8;
-  grid-row-end: 8;
+  grid-row-start: 10;
+  grid-row-end: 10;
   grid-column-start:1 ;
 
 
@@ -87,9 +78,10 @@ section.no-voting img:hover {
 ul {
   margin: 1rem;
   color: white;
-  grid-row-start: 9;
-  grid-row-end: 10;
-  grid-column: 1;
+  grid-row-start: 11;
+  grid-row-end: 11;
+  grid-column-end: 5;
+  grid-column-start: 1;
 }
 
 li {
@@ -132,7 +124,7 @@ section+div.clicks-allowed:hover {
   width: 1000px;
   height: 100px;
   animation-name: rainbow-text;
-  animation-duration:7s;
+  animation-duration:13s;
   animation-iteration-count: infinite;
 }
 
@@ -719,13 +711,47 @@ section+div.clicks-allowed:hover {
     color: transparent;
   }
 
-  98% {
+  97% {
     background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
     -webkit-background-clip: text;
     color: transparent;
   }
 
+  98% {
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  99% {
+    background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
   100% {
+    background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  101% {
+    background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  102%{
+    background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  103%{
+    background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  104%{
+    background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+  }105%{
     background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     color: transparent;

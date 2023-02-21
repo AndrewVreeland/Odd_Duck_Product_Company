@@ -2,39 +2,84 @@
 
 const productArray = [];
 let votingRounds = 25;
-const imageContainer = document.getElementById('imageContainer');
 
 
 // ************** DOM WINDOWS ******************
 const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
+const imageContainer = document.getElementById('imageContainer');
 const resultsBtn1 = document.getElementById('resultsBtn1');
-const list = document.getElementById('list');
 
+// **************** CANVAS ELEMENT FOR CHART ************
+
+let ctx = document.getElementById('myChart');
+
+// ************** Constructor Functions ***************
+
+function Product(name, fileExtension = 'jpg') {
+  this.name = name;
+  this.image = `images/${name}.${fileExtension}`;
+  this.votes = 0;
+  this.views = 0;
+}
 // ************* HELPER FUNCTIONS ***********
 function randomIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
 
+// ************ HELPER FUNCTION TO RENDER CHART
+
+function renderChart() {
+  let ChartObj = {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+  new ChartObj(ctx, ChartObj);
+}
+// ********* EVENT HANDLERS ******************
+
+
 
 function handleImgClick(event) {
+  console.log('hello');
   // identify image was clicked
   const imgClicked = event.target.title;
   console.dir(imgClicked);
   // increase number of clicks
-  for (let i = 0; i < productArray.length; i++){
-    if (imgClicked === productArray[i].name){
+  for (let i = 0; i < productArray.length; i++) {
+    if (imgClicked === productArray[i].name) {
       productArray[i].votes++;
       console.log(productArray[i].votes);
+      votingRounds--;
+      renderImg();
     }
   }
-  votingRounds--;
-  renderImg();
-  if (votingRounds === 0){
+  if (votingRounds === 0) {
     imageContainer.removeEventListener('click', handleImgClick);
-    document.getElementById('resultsBtn1').style = 'visibility: visible';
   }
+}
+
+function handleResultsViewing() {
+  if (votingRounds === 0) {
+    renderChart();
+    resultsBtn1.removeEventListener('click', handleResultsViewing);
+  }
+
 }
 
 // compares the images so no identical images are rendered.
@@ -48,13 +93,15 @@ function renderImg() {
   }
   image1.src = productArray[imgOneIndex].image;
   image1.title = productArray[imgOneIndex].name;
-  image1.alt = `this is our ${imgThreeIndex} product.`;
+  image1.alt = `this is our ${imgThreeIndex}.name product.`;
+
   image2.src = productArray[imgTwoIndex].image;
   image2.title = productArray[imgTwoIndex].name;
-  image1.alt = `this is our ${imgThreeIndex} product.`;
+  image2.alt = `this is our ${imgThreeIndex}.name product.`;
+
   image3.src = productArray[imgThreeIndex].image;
   image3.title = productArray[imgThreeIndex].name;
-  image1.alt = `this is our ${imgThreeIndex} product`;
+  image3.alt = `this is our ${imgThreeIndex}.name product`;
 
   // increase the views
   productArray[imgOneIndex].views++;
@@ -62,24 +109,7 @@ function renderImg() {
   productArray[imgThreeIndex].views++;
 }
 
-function handleResultsViewing(){
-  console.log('hello');
-  for (let i = 0; i < productArray.length; i++){
-    let productListItem = document.createElement('li');
-    productListItem.textContent = `The ${productArray[i].name} has ${productArray[i].views} Views, & votes: ${productArray[i].votes}`;
-    list.appendChild(productListItem);
-  }
-  resultsBtn1.removeEventListener('click', handleResultsViewing);
-}
 
-// ************** Constructor Functions ***************
-
-function Product(name, fileExtension = 'jpg') {
-  this.name = name;
-  this.image = `images/${name}.${fileExtension}`;
-  this.votes = 0;
-  this.views = 0;
-}
 
 // ***************** Executable Code *****************
 const bag = new Product('bag');
@@ -99,13 +129,13 @@ const tauntaun = new Product('tauntaun');
 const unicorn = new Product('unicorn');
 const waterCan = new Product('waterCan');
 const wineGlass = new Product('wineGlass');
-const wireframe = new Product('wireframe');
 const pen = new Product('pen');
 const petSweep = new Product('petSweep');
 
-productArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass, petSweep, pen, wireframe);
+productArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass, petSweep, pen);
 
+renderImg();
 
 imageContainer.addEventListener('click', handleImgClick);
-renderImg();
+
 resultsBtn1.addEventListener('click', handleResultsViewing);
