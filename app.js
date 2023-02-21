@@ -99,7 +99,7 @@ const tauntaun = new Product('tauntaun');
 const unicorn = new Product('unicorn');
 const waterCan = new Product('waterCan');
 const wineGlass = new Product('wineGlass');
-const wireframe = new Product('petSweep');
+const wireframe = new Product('wireframe');
 const pen = new Product('pen');
 const petSweep = new Product('petSweep');
 
