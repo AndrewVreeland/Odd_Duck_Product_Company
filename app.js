@@ -69,7 +69,7 @@ function handleResultsViewing(){
     productListItem.textContent = `${productArray[i].views} Views, & votes: ${productArray[i].votes}`;
     list.appendChild(productListItem);
   }
-  resultsBtn1.removeEventListener('click', handleImgClick);
+  resultsBtn1.removeEventListener('click', handleResultsViewing);
 }
 
 // ************** Constructor Functions ***************
