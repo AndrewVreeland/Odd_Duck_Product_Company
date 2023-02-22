@@ -1,7 +1,7 @@
 //*********** */ GLOBAL *************
 
 const productArray = [];
-let votingRounds = 10;
+let votingRounds = 20;
 
 
 // ************** DOM WINDOWS ******************
