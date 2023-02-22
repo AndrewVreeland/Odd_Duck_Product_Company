@@ -10,6 +10,7 @@ body {
 
 main {
   width: 1024px;
+  height: 30rem;
   margin: 3rem auto;
   display: grid;
   grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
@@ -32,21 +33,22 @@ h1 {
 
 section {
   /* This element will be a grid item, but also a flex container */
-  background-color: rgba(247, 223, 223, 0.226);
+
   grid-row-start: 4;
-  grid-row-end: 10 ;
+  grid-row-end: 10;
   grid-column-start: 1;
   grid-column-end: 10;
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   justify-content: space-between;
   /* align-items: flex-start;  */
+
 }
 
 button {
   grid-row-start: 10;
   grid-row-end: 10;
-  grid-column-start:1 ;
+  grid-column-start: 1;
 
 
 }
@@ -64,49 +66,27 @@ section img {
 /*-- add hover states so the user can tell what 
 behavior is expected of them--*/
 section img:hover {
-  background: linear-gradient(30deg , violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
   cursor: pointer;
 }
 
-/* once voting ends */
-section.no-voting img:hover {
-  border: 5px solid transparent;
-  cursor: none;
-}
-
-/* -- results list -- */
-/* ul {
-  margin: 1rem;
-  color: white;
-  grid-row-start: 11;
-  grid-row-end: 11;
-  grid-column-end: 5;
-  grid-column-start: 1;
-}
-
-li {
-  margin: .5rem;
-  color: white;
-} */
-
-/* -- button -- */
-/* section+div {
+section+div {
   background-color: rgb(66, 196, 120);
   color: rgb(255, 255, 255);
-  padding: .5rem 1rem;
+  /* padding: .5rem 1rem; */
   width: max-content;
   height: max-content;
-  font-size: .8rem;
-  margin: 1rem; */
-  
+  margin: 1rem;
+
   /* —— Demo stretch goal —— */
   /* This code improves the UX. Making it clear what the user should 
   do once the voting cycle ends. Do not demo this unless you do the 
   below 'section + div.clicks-allowed' code as well. The class  
   'clicks-allowed' must be added to the element via the JavaScript. */
-  
-  /* pointer-events: none;
-} */
+
+  pointer-events: none;
+}
 
 /* Demo stretch goal: */
 /* section+div.clicks-allowed {
@@ -124,7 +104,7 @@ section+div.clicks-allowed:hover {
   width: 1000px;
   height: 100px;
   animation-name: rainbow-text;
-  animation-duration:13s;
+  animation-duration: 13s;
   animation-iteration-count: infinite;
 }
 
@@ -722,36 +702,44 @@ section+div.clicks-allowed:hover {
     -webkit-background-clip: text;
     color: transparent;
   }
+
   99% {
     background-image: repeating-linear-gradient(to left, indigo, blue, green, yellow, orange, red, violet);
     -webkit-background-clip: text;
     color: transparent;
   }
+
   100% {
     background-image: repeating-linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);
     -webkit-background-clip: text;
     color: transparent;
   }
+
   101% {
     background-image: repeating-linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);
     -webkit-background-clip: text;
     color: transparent;
   }
-  102%{
+
+  102% {
     background-image: repeating-linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green);
     -webkit-background-clip: text;
     color: transparent;
   }
-  103%{
+
+  103% {
     background-image: repeating-linear-gradient(to left, orange, red, violet, indigo blue, green, yellow);
     -webkit-background-clip: text;
     color: transparent;
   }
-  104%{
+
+  104% {
     background-image: repeating-linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange);
     -webkit-background-clip: text;
     color: transparent;
-  }105%{
+  }
+
+  105% {
     background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
     -webkit-background-clip: text;
     color: transparent;
