@@ -122,7 +122,6 @@ function renderImg() {
   let imgOneIndex = indexArray.pop();
   let imgTwoIndex = indexArray.pop();
   let imgThreeIndex = indexArray.pop();
-  indexArray.reverse();
   image1.src = productArray[imgOneIndex].image;
   image1.title = productArray[imgOneIndex].name;
   image1.alt = `this is our ${imgThreeIndex}.name product.`;
