@@ -64,7 +64,7 @@ section img {
 /*-- add hover states so the user can tell what 
 behavior is expected of them--*/
 section img:hover {
-  border: 5px solid rgb(253, 0, 0);
+  background: linear-gradient(30deg , violet, indigo, blue, green, yellow, orange, red, violet, indigo, blue, green, yellow, orange, red);
   cursor: pointer;
 }
 
@@ -75,7 +75,7 @@ section.no-voting img:hover {
 }
 
 /* -- results list -- */
-ul {
+/* ul {
   margin: 1rem;
   color: white;
   grid-row-start: 11;
@@ -87,17 +87,17 @@ ul {
 li {
   margin: .5rem;
   color: white;
-}
+} */
 
 /* -- button -- */
-section+div {
+/* section+div {
   background-color: rgb(66, 196, 120);
   color: rgb(255, 255, 255);
   padding: .5rem 1rem;
   width: max-content;
   height: max-content;
   font-size: .8rem;
-  margin: 1rem;
+  margin: 1rem; */
   
   /* —— Demo stretch goal —— */
   /* This code improves the UX. Making it clear what the user should 
@@ -105,11 +105,11 @@ section+div {
   below 'section + div.clicks-allowed' code as well. The class  
   'clicks-allowed' must be added to the element via the JavaScript. */
   
-  pointer-events: none;
-}
+  /* pointer-events: none;
+} */
 
 /* Demo stretch goal: */
-section+div.clicks-allowed {
+/* section+div.clicks-allowed {
   background-color: rgb(255, 0, 0);
   color: white;
   cursor: pointer;
@@ -118,7 +118,7 @@ section+div.clicks-allowed {
 
 section+div.clicks-allowed:hover {
   background-color: rgb(255, 0, 0)
-}
+} */
 .rainbow-text {
 
   width: 1000px;

@@ -1,7 +1,7 @@
 //*********** */ GLOBAL *************
 
 const productArray = [];
-let votingRounds = 25;
+let votingRounds = 10;
 
 
 // ************** DOM WINDOWS ******************
@@ -28,18 +28,37 @@ function randomIndex() {
   return Math.floor(Math.random() * productArray.length);
 }
 
+
+
 // ************ HELPER FUNCTION TO RENDER CHART
 
 function renderChart() {
+  let productNames = [];
+  let productVotes = [];
+  let productViews = [];
+
+  for (let i = 0; i < productArray.length; i++) {
+    productNames.push(productArray[i].name);
+    productVotes.push(productArray[i].votes);
+    productViews.push(productArray[i].views);
+  }
+
   let ChartObj = {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
+      labels: productNames,
+      datasets: [
+        {
+          label: '# of Votes',
+          data: productVotes,
+          borderWidth: 1
+        },
+        {
+          label: '# of Views',
+          data: productViews,
+          borderWidth: 1
+        },
+      ]
     },
     options: {
       scales: {
@@ -49,7 +68,7 @@ function renderChart() {
       }
     }
   };
-  new ChartObj(ctx, ChartObj);
+  new Chart(ctx, ChartObj);
 }
 // ********* EVENT HANDLERS ******************
 
@@ -77,20 +96,33 @@ function handleImgClick(event) {
 function handleResultsViewing() {
   if (votingRounds === 0) {
     renderChart();
-    resultsBtn1.removeEventListener('click', handleResultsViewing);
+    resultsBtn1.removeEventListener('click', handleResultsViewing)
+    document.getElementById('resultsBtn1').remove();;
   }
 
 }
 
 // compares the images so no identical images are rendered.
+
+// *************** HELPER FUNCTION / UTILITIES *********************
+
+
+const indexArray = [];
+
 function renderImg() {
-  let imgOneIndex = randomIndex();
-  let imgTwoIndex = randomIndex();
-  let imgThreeIndex = randomIndex();
-  while (imgOneIndex === imgTwoIndex || imgOneIndex === imgThreeIndex || imgThreeIndex === imgTwoIndex) {
-    imgTwoIndex = randomIndex();
-    imgThreeIndex = randomIndex();
+
+  while(indexArray.length < 6){
+    let randomNum = randomIndex();
+    if (!indexArray.includes(randomNum)){
+      indexArray.unshift(randomNum);
+    }
   }
+  console.log(indexArray);
+
+  let imgOneIndex = indexArray.pop();
+  let imgTwoIndex = indexArray.pop();
+  let imgThreeIndex = indexArray.pop();
+  indexArray.reverse();
   image1.src = productArray[imgOneIndex].image;
   image1.title = productArray[imgOneIndex].name;
   image1.alt = `this is our ${imgThreeIndex}.name product.`;
