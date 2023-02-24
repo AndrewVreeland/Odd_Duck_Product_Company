@@ -163,26 +163,14 @@ let parsedProducts = JSON.parse(retreivedProducts);
 console.log(parsedProducts);
 
 
-let bag = new Product('bag');
-let banana = new Product('banana');
-let bathroom = new Product('bathroom');
-let boots = new Product('boots');
-let breakfast = new Product('breakfast');
-let bubblegum = new Product('bubblegum');
-let chair = new Product('chair');
-let cthulhu = new Product('cthulhu');
-let dogDuck = new Product('dogDuck');
-let dragon = new Product('dragon');
-let scissors = new Product('scissors');
-let shark = new Product('shark');
-let sweep = new Product('sweep', 'png');
-let tauntaun = new Product('tauntaun');
-let unicorn = new Product('unicorn');
-let waterCan = new Product('waterCan');
-let wineGlass = new Product('wineGlass');
-let pen = new Product('pen');
-let petSweep = new Product('petSweep');
-productArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogDuck, dragon, scissors, shark, sweep, tauntaun, unicorn, waterCan, wineGlass, petSweep, pen);
+
+// if(retreivedProducts){
+//   for(let i = 0; i < parsedProducts; i++){
+// if (parsedProducts[i].name === 'sweep'){
+//   let reconstructedSweep = new Product (parsedProducts[i])
+// }
+// }
+// }
 
 if (retreivedProducts) {
   productArray = parsedProducts;
